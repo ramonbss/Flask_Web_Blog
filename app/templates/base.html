@@ -33,7 +33,7 @@ block head %} {{ super() }}
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        {% if curent_user.is_authenticated %}
+        {% if current_user.is_authenticated %}
         <li><a href="{{  url_for('auth.logout')}}">Log Out</a></li>
         {% else %}
         <li href="{{ url_for('auth.login') }}">Log In</li>
