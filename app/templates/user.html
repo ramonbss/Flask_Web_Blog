@@ -2,7 +2,9 @@
 endblock %} {% block page_content %}
 <div class="page-header">
   <h1>{{ user.username }}</h1>
-  {% if user.name or user.location %}
+  {% if user == current_user %}
+  <a class="btn btn-default" href="{{ url_for('.edit_profile')}}"></a>
+  {% endif %} {% if user.name or user.location %}
   <p>
     {% if user.name %} user.name {% endif %} {% if user.location %} From
     <a href="http://maps.google.com/?q={{ user.location }}"> </a>
